@@ -1,0 +1,449 @@
+{
+  "renderer": "geras",
+  "trashcan" : true,
+  "grid" : {
+    "spacing" : 20,
+    "length" : 25,
+    "color" : "#ccc",
+    "snap" : true
+  },
+  "move" : {
+    "scrollbars" : {
+      "horizontal" : true,
+      "vertical" : true
+    },
+    "drag" : true,
+    "wheel" : false
+  },
+  "zoom" : {
+    "controls" : true,
+    "wheel" : true,
+    "startScale" : 1.0,
+    "maxScale" : 3,
+    "minScale" : 0.25,
+    "scaleSpeed" : 1.1,
+    "pinch" : true
+  },
+  "toolbox" : {
+    "kind": "categoryToolbox",
+    "contents": [
+      {
+        "kind": "category",
+        "name": "Math",
+        "colour": "#5C81A6",
+        "contents": [
+          {
+            "kind": "block",
+            "type": "abs",
+            "inputs": {
+              "X": {
+                "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 10
+                  }
+                }
+              }
+            }
+          },
+          {
+            "kind": "block",
+            "type": "add",
+            "inputs": {
+              "A": {
+                "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 10
+                  }
+                }
+              },
+              "B": {
+                "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 10
+                  }
+                }
+              }
+            }
+          },
+          {
+            "kind": "block",
+            "type": "minus",
+            "inputs": {
+              "A": {
+                "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 10
+                  }
+                }
+              },
+              "B": {
+                "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 10
+                  }
+                }
+              }
+            }
+          },
+          {
+            "kind": "block",
+            "type": "mult",
+            "inputs": {
+              "A": {
+                "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 10
+                  }
+                }
+              },
+              "B": {
+                "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 10
+                  }
+                }
+              }
+            }
+          },
+          {
+            "kind": "block",
+            "type": "divide",
+            "inputs": {
+              "A": {
+                "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 10
+                  }
+                }
+              },
+              "B": {
+                "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 10
+                  }
+                }
+              }
+            }
+          },
+          {
+            "kind": "block",
+            "type": "ceil",
+            "inputs": {
+              "X": {
+                "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 10
+                  }
+                }
+              }
+            }
+          },
+          {
+            "kind": "block",
+            "type": "floor",
+            "inputs": {
+              "X": {
+                "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 10
+                  }
+                }
+              }
+            }
+          },
+          {
+            "kind": "block",
+            "type": "constants"
+          },
+          {
+            "kind": "block",
+            "type": "cos"
+          },
+          {
+            "kind": "block",
+            "type": "cosh"
+          },
+          {
+            "kind": "block",
+            "type": "sin"
+          },
+          {
+            "kind": "block",
+            "type": "sinh"
+          },
+          {
+            "kind": "block",
+            "type": "random",
+            "inputs": {
+              "A": {
+                "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 1
+                  }
+                }
+              },
+              "B": {
+                "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 10
+                  }
+                }
+              }
+            }
+          },
+          {
+            "kind": "block",
+            "type": "round"
+          }
+        ]
+      },
+      {
+        "kind": "category",
+        "name": "Logic",
+        "colour": "#8f5ca6",
+        "contents": [
+          {
+            "kind": "block",
+            "type": "and",
+            "inputs": {
+              "A": {
+                "shadow": {
+                  "type": "logic_boolean",
+                  "fields": {
+                    "NUM": true
+                  }
+                }
+              },
+              "B": {
+                "shadow": {
+                  "type": "logic_boolean",
+                  "fields": {
+                    "NUM": false
+                  }
+                }
+              }
+            }
+          },
+          {
+            "kind": "block",
+            "type": "or",
+            "inputs": {
+              "A": {
+                "shadow": {
+                  "type": "logic_boolean",
+                  "fields": {
+                    "NUM": true
+                  }
+                }
+              },
+              "B": {
+                "shadow": {
+                  "type": "logic_boolean",
+                  "fields": {
+                    "NUM": false
+                  }
+                }
+              }
+            }
+          },
+          {
+            "kind": "block",
+            "type": "not"
+          },
+          {
+            "kind": "block",
+            "type": "iseq",
+            "inputs": {
+              "A": {
+                "shadow": {
+                  "type": "logic_boolean",
+                  "fields": {
+                    "NUM": true
+                  }
+                }
+              },
+              "B": {
+                "shadow": {
+                  "type": "logic_boolean",
+                  "fields": {
+                    "NUM": false
+                  }
+                }
+              }
+            }
+          },
+          {
+            "kind": "block",
+            "type": "islt",
+            "inputs": {
+              "A": {
+                "shadow": {
+                  "type": "logic_boolean",
+                  "fields": {
+                    "NUM": true
+                  }
+                }
+              },
+              "B": {
+                "shadow": {
+                  "type": "logic_boolean",
+                  "fields": {
+                    "NUM": false
+                  }
+                }
+              }
+            }
+          },
+          {
+            "kind": "block",
+            "type": "isgt",
+            "inputs": {
+              "A": {
+                "shadow": {
+                  "type": "logic_boolean",
+                  "fields": {
+                    "NUM": true
+                  }
+                }
+              },
+              "B": {
+                "shadow": {
+                  "type": "logic_boolean",
+                  "fields": {
+                    "NUM": false
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "category",
+        "name": "Quantum",
+        "colour": "#a65c5c",
+        "contents": [
+          {
+            "kind": "block",
+            "type": "hadamard"
+          },
+          
+          {
+            "kind": "block",
+            "type": "creg"
+          },
+          {
+            "kind": "block",
+            "type": "qreg"
+          },
+          {
+            "kind": "block",
+            "type": "paulix"
+          },
+          {
+            "kind": "block",
+            "type": "pauliy"
+          },
+          {
+            "kind": "block",
+            "type": "pauliz"
+          }
+        ]
+      },
+      {
+        "kind": "category",
+        "name": "Control",
+        "colour": "#b68c3e",
+        "contents": [
+          {
+            "kind": "block",
+            "type": "if"
+          },
+          {
+            "kind": "block",
+            "type": "forever"
+          },
+          {
+            "kind": "block",
+            "type": "for",
+            "inputs": {
+              "ITER": {
+                "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 10
+                  }
+                }
+              }
+            }
+          },
+          {
+            "kind": "block",
+            "type": "while"
+          },
+          {
+            "kind": "block",
+            "type": "start"
+          }
+        ]
+      },
+      {
+        "kind": "category",
+        "name": "Variables",
+        "colour": "#acb63e",
+        "contents": [
+          {
+            "kind": "block",
+            "type": "declare",
+            "inputs": {
+              "NAME": {
+                "shadow": {
+                  "type": "text",
+                  "fields": {
+                    "STR": "var1"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "kind": "block",
+            "type": "define"
+          },
+          {
+            "kind": "block",
+            "type": "get"
+          },
+          {
+            "kind": "block",
+            "type": "set"
+          }
+        ]
+      },
+      {
+        "kind": "category",
+        "name": "Output",
+        "colour": "#0d9f0b",
+        "contents": [
+          {
+            "kind": "block",
+            "type": "print"
+          }
+        ]
+      }
+    ]
+  }
+}

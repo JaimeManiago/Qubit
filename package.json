@@ -1,0 +1,21 @@
+{
+  "name": "qubit",
+  "version": "1.0.0",
+  "description": "a web-native high-order block-based classical-quantum programming language",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"cd server && npm start\" \"cd client && npm run dev\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "concurrently": "^9.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaimeManiago/QetLabs.git"
+  }
+}

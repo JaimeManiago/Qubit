@@ -1,0 +1,33 @@
+#root {
+  background-color: #000000;
+  height: 90vh;
+  display: grid;
+  place-items: stretch / stretch;
+  place-content: stretch / stretch;
+  grid-template-rows: 100%;
+  grid-template-columns: 70% 30%;
+  grid-template-areas: 
+    "A B";
+}
+
+#core {
+  grid-area: A;
+}
+
+#orbit {
+  grid-area: B;
+  background-color: white;
+  border-width: 1px;
+  border-color: black;
+}
+
+#runBtn {
+  background-color: #06ca5e;
+  padding: 7px;
+}
+
+header {
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+}
