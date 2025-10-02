@@ -1,3 +1,5 @@
+import { Order } from "blockly/javascript";
+
 export const andBlock = {
 	init : function() {
 		this.jsonInit({
@@ -23,5 +25,12 @@ export const andBlock = {
 }
 
 export const andGenerator = function (block, generator) {
-	return `console.log('hello');\n`
+	return [
+    JSON.stringify({
+      type: 'and',
+      left: generator.valueToCode(block, 'A', Order.NONE),
+      right: generator.valueToCode(block, 'B', Order.NONE) 
+    }),
+    Order.NONE
+  ];
 }

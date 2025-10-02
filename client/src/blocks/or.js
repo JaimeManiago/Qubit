@@ -1,3 +1,5 @@
+import { Order } from "blockly/javascript";
+
 export const orBlock = {
 	init : function() {
 		this.jsonInit({
@@ -23,5 +25,10 @@ export const orBlock = {
 }
 
 export const orGenerator = function (block, generator) {
-	return `console.log('hello');\n`
+  return [
+    `or,`+
+    `${generator.valueToCode(block, 'A', Order.NONE) == 'true'},`+
+    `${generator.valueToCode(block, 'B', Order.NONE) == 'true'}`,
+    Order.NONE
+  ];
 }

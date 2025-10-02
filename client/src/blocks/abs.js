@@ -1,3 +1,5 @@
+import { Order } from "blockly/javascript";
+
 export const absBlock = {
 	init : function() {
 		this.jsonInit({
@@ -17,5 +19,11 @@ export const absBlock = {
 }
 
 export const absGenerator = function (block, generator) {
-	return `console.log('hello');\n`
+  return [
+    JSON.stringify({
+      type: 'abs',
+      x: generator.valueToCode(block, 'X', Order.NONE)
+    }),
+    Order.NONE
+  ];
 }

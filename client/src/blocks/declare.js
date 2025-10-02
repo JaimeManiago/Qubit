@@ -2,7 +2,7 @@ export const declareBlock = {
 	init : function() {
 		this.jsonInit({
 			"type": "declare",
-			"message0": "declare a new variable named %1",
+			"message0": "declare new variable named %1",
 			"args0": [
 				{
 					"type": "input_value",
@@ -19,5 +19,9 @@ export const declareBlock = {
 }
 
 export const declareGenerator = function (block, generator) {
-	return `console.log('hello');\n`
+	return [
+    `declare,`+
+    `${generator.valueToCode(block, 'NAME', Order.NONE)}`,
+    Order.NONE
+  ];
 }

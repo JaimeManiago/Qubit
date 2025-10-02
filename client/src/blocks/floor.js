@@ -17,5 +17,11 @@ export const floorBlock = {
 }
 
 export const floorGenerator = function (block, generator) {
-	return `console.log('hello');\n`
+	return [
+    JSON.stringify({
+      type: 'floor',
+      x: generator.valueToCode(block, 'X', Order.NONE)
+    }),
+    Order.NONE
+  ];
 }

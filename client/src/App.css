@@ -31,3 +31,23 @@ header {
   text-align: center;
   background-color: white;
 }
+
+#console {
+  border-width: 1px;
+  border-color: black;
+  font-size: 11px;
+  height: 50vh;
+  overflow: auto;
+}
+
+#logCfgBtn {
+  float: right;
+}
+
+#logCfg {
+  font-size: 11px;
+  width: 150px;
+  border: 1px solid black;
+  z-index: 11; 
+  background-color: white;
+}

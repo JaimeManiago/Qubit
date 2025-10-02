@@ -1,3 +1,5 @@
+import { Order } from "blockly/javascript";
+
 export const sinhBlock = {
 	init : function() {
 		this.jsonInit({
@@ -17,5 +19,9 @@ export const sinhBlock = {
 }
 
 export const sinhGenerator = function (block, generator) {
-	return `console.log('hello');\n`
+	return [
+    `add,`+
+    `${generator.valueToCode(block, 'X', Order.NONE)|| 0}`,
+    Order.NONE
+  ];
 }

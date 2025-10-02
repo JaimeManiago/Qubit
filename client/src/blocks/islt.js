@@ -6,13 +6,11 @@ export const isltBlock = {
 			"args0": [
 				{
 					"type": "input_value",
-					"name": "A",
-          "check": "Boolean"
+					"name": "A"
 				},
         {
           "type": "input_value",
-          "name": "B",
-          "check": "Boolean"
+          "name": "B"
         }
 			],
       "output": "Boolean",
@@ -23,5 +21,10 @@ export const isltBlock = {
 }
 
 export const isltGenerator = function (block, generator) {
-	return `console.log('hello');\n`
+	return [
+    `ilt,`+
+    `${generator.valueToCode(block, 'A', Order.NONE)},`+
+    `${generator.valueToCode(block, 'B', Order.NONE)}`,
+    Order.NONE
+  ];
 }

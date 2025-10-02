@@ -2,12 +2,12 @@ export const collapseBlock = {
 	init : function() {
 		this.jsonInit({
 			"type": "collapse",
-			"message0": "tilt qubit %1 of %2",
+			"message0": "collapse qubit %1 of %2",
 			"args0": [
 				{
 					"type": "field_number",
 					"name": "IDX",
-          "precision": 1
+          "precision": 1,
 				},
         {
           "type": "input_value",
@@ -22,5 +22,12 @@ export const collapseBlock = {
 }
 
 export const collapseGenerator = function (block, generator) {
-	return `console.log('hello');\n`
+	return [
+    JSON.stringify({
+      type: 'collapse',
+      idx: generator.valueToCode(block, 'IDX', Order.NONE),
+      qbit: generator.valueToCode(block, 'QREG', Order.NONE) 
+    }),
+    Order.NONE
+  ];
 }

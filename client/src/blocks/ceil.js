@@ -17,5 +17,11 @@ export const ceilBlock = {
 }
 
 export const ceilGenerator = function (block, generator) {
-	return `console.log('hello');\n`
+	return [
+    JSON.stringify({
+      type: 'ceil',
+      x: generator.valueToCode(block, 'X', Order.NONE)
+    }),
+    Order.NONE
+  ];
 }

@@ -1,4 +1,5 @@
-// temporary block
+import { Order } from "blockly/javascript";
+
 export const printBlock = {
 	init : function() {
 		this.jsonInit({
@@ -7,7 +8,7 @@ export const printBlock = {
 			"args0": [
         {
           "type": "input_value",
-          "name": "VAR"
+          "name": "OUTPUT"
         }
 			],
 			"previousStatement": null,
@@ -18,5 +19,7 @@ export const printBlock = {
 }
 
 export const printGenerator = function (block, generator) {
-	return `console.log('hello');\n`
+	return `;print${
+    generator.valueToCode(block, 'OUTPUT', Order.ATOMIC)
+  }`;
 }

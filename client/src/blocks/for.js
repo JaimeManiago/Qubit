@@ -25,5 +25,12 @@ export const forBlock = {
 }
 
 export const forGenerator = function (block, generator) {
-	return `console.log('hello');\n`
+	return [
+    JSON.stringify({
+      type: 'for',
+      left: generator.valueToCode(block, 'ITER', Order.NONE),
+      right: generator.valueToCode(block, 'CODE', Order.NONE) 
+    }),
+    Order.NONE
+  ];
 }

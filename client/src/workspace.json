@@ -207,6 +207,72 @@
           {
             "kind": "block",
             "type": "round"
+          },
+          {
+            "kind": "block",
+            "type": "rad",
+            "inputs": {
+              "A": {
+                "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 2
+                  }
+                }
+              },
+              "B": {
+                "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 2
+                  }
+                }
+              }
+            }
+          },
+          {
+            "kind": "block",
+            "type": "exp",
+            "inputs": {
+              "A": {
+                "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 10
+                  }
+                }
+              },
+              "B": {
+                "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 2
+                  }
+                }
+              }
+            }
+          },
+          {
+            "kind": "block",
+            "type": "log",
+            "inputs": {
+              "A": {
+                "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 10
+                  }
+                }
+              },
+              "B": {
+                "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 2
+                  }
+                }
+              }
+            }
           }
         ]
       },
@@ -265,25 +331,7 @@
           },
           {
             "kind": "block",
-            "type": "iseq",
-            "inputs": {
-              "A": {
-                "shadow": {
-                  "type": "logic_boolean",
-                  "fields": {
-                    "NUM": true
-                  }
-                }
-              },
-              "B": {
-                "shadow": {
-                  "type": "logic_boolean",
-                  "fields": {
-                    "NUM": false
-                  }
-                }
-              }
-            }
+            "type": "iseq"
           },
           {
             "kind": "block",
@@ -291,17 +339,17 @@
             "inputs": {
               "A": {
                 "shadow": {
-                  "type": "logic_boolean",
+                  "type": "math_number",
                   "fields": {
-                    "NUM": true
+                    "NUM": 10
                   }
                 }
               },
               "B": {
                 "shadow": {
-                  "type": "logic_boolean",
+                  "type": "math_number",
                   "fields": {
-                    "NUM": false
+                    "NUM": 10
                   }
                 }
               }
@@ -313,17 +361,17 @@
             "inputs": {
               "A": {
                 "shadow": {
-                  "type": "logic_boolean",
+                  "type": "math_number",
                   "fields": {
-                    "NUM": true
+                    "NUM": 10
                   }
                 }
               },
               "B": {
                 "shadow": {
-                  "type": "logic_boolean",
+                  "type": "math_number",
                   "fields": {
-                    "NUM": false
+                    "NUM": 10
                   }
                 }
               }
@@ -413,7 +461,7 @@
                 "shadow": {
                   "type": "text",
                   "fields": {
-                    "STR": "var1"
+                    "TEXT": "var1"
                   }
                 }
               }
@@ -421,7 +469,17 @@
           },
           {
             "kind": "block",
-            "type": "define"
+            "type": "define",
+            "inputs": {
+              "NAME": {
+                "shadow": {
+                  "type": "text",
+                  "fields": {
+                    "TEXT": "my block"
+                  }
+                }
+              }
+            }
           },
           {
             "kind": "block",
@@ -436,12 +494,30 @@
       {
         "kind": "category",
         "name": "Output",
-        "colour": "#0d9f0b",
+        "colour": "#699f0b",
         "contents": [
           {
             "kind": "block",
-            "type": "print"
+            "type": "print",
+            "inputs": {
+              "OUTPUT": {
+                "shadow": {
+                  "type": "text",
+                  "fields": {
+                    "TXT": "Hello, World!"
+                  }
+                }
+              }
+            }
           }
+        ]
+      },
+      {
+        "kind": "category",
+        "name": "My Blocks",
+        "colour": "#3d9850",
+        "contents": [
+          
         ]
       }
     ]

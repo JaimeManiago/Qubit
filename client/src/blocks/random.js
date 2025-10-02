@@ -23,5 +23,10 @@ export const randomBlock = {
 }
 
 export const randomGenerator = function (block, generator) {
-	return `console.log('hello');\n`
+	return [
+    `rng,`+
+    `${generator.valueToCode(block, 'A', Order.NONE) || 0},`+
+    `${generator.valueToCode(block, 'B', Order.NONE) || 0}`,
+    Order.NONE
+  ]
 }

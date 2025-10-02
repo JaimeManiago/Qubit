@@ -1,3 +1,5 @@
+import { Order } from "blockly/javascript";
+
 export const divideBlock = {
 	init : function() {
 		this.jsonInit({
@@ -23,5 +25,12 @@ export const divideBlock = {
 }
 
 export const divideGenerator = function (block, generator) {
-	return `console.log('hello');\n`
+	return [
+    JSON.stringify({
+      type: 'div',
+      left: generator.valueToCode(block, 'A', Order.NONE),
+      right: generator.valueToCode(block, 'B', Order.NONE) 
+    }),
+    Order.NONE
+  ];
 }

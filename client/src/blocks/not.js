@@ -1,3 +1,5 @@
+import { Order } from "blockly/javascript";
+
 export const notBlock = {
 	init : function() {
 		this.jsonInit({
@@ -17,5 +19,9 @@ export const notBlock = {
 }
 
 export const notGenerator = function (block, generator) {
-	return `console.log('hello');\n`
+  return [
+    `not,`+
+    `${generator.valueToCode(block, 'X', Order.NONE) != 'true'}`,
+    Order.NONE
+  ]
 }

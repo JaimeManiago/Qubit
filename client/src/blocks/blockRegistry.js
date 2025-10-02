@@ -36,7 +36,10 @@ import { roundBlock, roundGenerator} from './round.js'
 import { iseqBlock, iseqGenerator} from './iseq.js'
 import { isgtBlock, isgtGenerator} from './isgt.js'
 import { isltBlock, isltGenerator} from './islt.js'
-
+import { printBlock, printGenerator} from './print.js'
+import { radBlock, radGenerator} from './rad.js'
+import { expBlock, expGenerator} from './exp.js'
+import { logBlock, logGenerator} from './log.js'
 
 /*
 import { aaaBlock, aaaGenerator} from './aaa.js'
@@ -151,6 +154,18 @@ export function registerBlocks() {
   
   Blockly.Blocks['isgt'] = isgtBlock;
   javascriptGenerator.forBlock['isgt'] = isgtGenerator;
+  
+  Blockly.Blocks['print'] = printBlock;
+  javascriptGenerator.forBlock['print'] = printGenerator;
+  
+  Blockly.Blocks['rad'] = radBlock;
+  javascriptGenerator.forBlock['rad'] = radGenerator;
+  
+  Blockly.Blocks['exp'] = expBlock;
+  javascriptGenerator.forBlock['exp'] = expGenerator;
+  
+  Blockly.Blocks['log'] = logBlock;
+  javascriptGenerator.forBlock['log'] = logGenerator;
   
   /*
   

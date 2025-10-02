@@ -10,5 +10,5 @@ export const startBlock = {
 }
 
 export const startGenerator = function (block, generator) {
-	return `alert('hello');\n`
+	return `start`
 }

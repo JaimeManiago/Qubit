@@ -1,3 +1,5 @@
+import { Order } from "blockly/javascript";
+
 export const cosBlock = {
 	init : function() {
 		this.jsonInit({
@@ -17,5 +19,11 @@ export const cosBlock = {
 }
 
 export const cosGenerator = function (block, generator) {
-	return `console.log('hello');\n`
+	return [
+    JSON.stringify({
+      type: 'cos',
+      x: generator.valueToCode(block, 'X', Order.NONE)
+    }),
+    Order.NONE
+  ];
 }

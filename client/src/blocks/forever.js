@@ -11,12 +11,17 @@ export const foreverBlock = {
 				}
 			],
 			"previousStatement": null,
-			"nextStatement": null,
 			"tooltip": "repeat the block of code inside forever"
 		});
 	}
 }
 
 export const foreverGenerator = function (block, generator) {
-	return `console.log('hello');\n`
+	return [
+    JSON.stringify({
+      type: '4ever',
+      code: generator.valueToCode(block, 'CODE', Order.NONE) 
+    }),
+    Order.NONE
+  ];
 }

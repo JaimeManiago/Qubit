@@ -1,3 +1,5 @@
+import { Order } from "blockly/javascript";
+
 export const coshBlock = {
 	init : function() {
 		this.jsonInit({
@@ -17,5 +19,11 @@ export const coshBlock = {
 }
 
 export const coshGenerator = function (block, generator) {
-	return `console.log('hello');\n`
+	return [
+    JSON.stringify({
+      type: 'cosh',
+      x: generator.valueToCode(block, 'X', Order.NONE)
+    }),
+    Order.NONE
+  ];
 }

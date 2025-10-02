@@ -8,9 +8,12 @@ app.use(cors());
 app.use(express.json());
 
 app.post("/api", (req, res) => {
+
+  //req.body is the array
+  console.log(req.body)
   try {
     res.status(200).json({
-      console: 'skibidibidootdootdoo',
+      text: req.body,
       success: true,
       timestamp: new Date().toISOString()
     });

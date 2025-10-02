@@ -17,5 +17,9 @@ export const roundBlock = {
 }
 
 export const roundGenerator = function (block, generator) {
-	return `console.log('hello');\n`
+	return [
+    `rnd,`+
+    `${generator.valueToCode(block, 'X', Order.NONE)|| 0}`,
+    Order.NONE
+  ];
 }

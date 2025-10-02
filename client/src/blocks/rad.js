@@ -1,10 +1,8 @@
-import { Order } from "blockly/javascript";
-
-export const addBlock = {
+export const radBlock = {
 	init : function() {
 		this.jsonInit({
-			"type": "add",
-			"message0": "%1 + %2",
+			"type": "rad",
+			"message0": "%1 √ %2",
 			"args0": [
 				{
 					"type": "input_value",
@@ -24,13 +22,11 @@ export const addBlock = {
 	}
 }
 
-export const addGenerator = function (block, generator) {
-  return [
-    JSON.stringify({
-      type: 'add',
-      left: generator.valueToCode(block, 'A', Order.NONE),
-      right: generator.valueToCode(block, 'B', Order.NONE) 
-    }),
+export const radGenerator = function (block, generator) {
+	return [
+    `rad,`+
+    `${generator.valueToCode(block, 'A', Order.NONE) || 0},`+
+    `${generator.valueToCode(block, 'B', Order.NONE) || 0}`,
     Order.NONE
-  ];
+  ]
 }

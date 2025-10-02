@@ -1,3 +1,5 @@
+import { Order } from "blockly/javascript";
+
 export const multBlock = {
 	init : function() {
 		this.jsonInit({
@@ -23,5 +25,10 @@ export const multBlock = {
 }
 
 export const multGenerator = function (block, generator) {
-	return `console.log('hello');\n`
+	return [
+    `mlt,`+
+    `${generator.valueToCode(block, 'A', Order.NONE) || 0},`+
+    `${generator.valueToCode(block, 'B', Order.NONE) || 0}`,
+    Order.NONE
+  ];
 }
