@@ -4,18 +4,16 @@ export const hadamardBlock = {
 			"type": "hadamard",
 			"message0": "superpose qubit %1",
 			"args0": [
-        {
-          "type": "input_value",
-          "name": "QUBIT"
-        }
+				{
+					"type": "field_number",
+					"name": "X",
+				}
 			],
-			"previousStatement": null,
-			"nextStatement": null,
-			"tooltip": "skibidi"
+			"tooltip": "applies the hadamard gate to the qubit"
 		});
 	}
 }
 
 export const hadamardGenerator = function (block, generator) {
-	return `console.log('hello');\n`
+  return `h ${generator.getFieldValue('X')}`;
 }

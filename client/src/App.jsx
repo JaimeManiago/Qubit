@@ -30,7 +30,7 @@ function App() {
 
   /* RUN LOG */
   const [ logs, setLogs ] = useState([]);
-  const consoleFloor = useRef(null);
+  /*const consoleFloor = useRef(null);
 
   const [rt, setRt] = useState(true);
   const [tsStart, setTsStart] = useState(true);
@@ -39,33 +39,30 @@ function App() {
 
   useEffect(() => {
     consoleFloor.current?.scrollIntoView({behavior:"smooth"});
-  }, [logs])
+  }, [logs])*/
 
 
 
   /* RUN BUTON CODE */
-  function runCode(wsCode) {
+  /*function runCode(wsCode) {
 
-    console.log(wsCode);
-    
-    // assertions
-    const bro = wsCode
+    // process data
+    const toSend = `{"threads": [${wsCode
       .split('\n')
       .filter((code) => {
-        return code.startsWith("start;");
+        return( code.startsWith("S") && code.length>1);
       })
-      .map(str => str.split(';'))
-      .reduce((res, arr) => {
-        arr.forEach((num, idx) => {
-          if(!res[idx]) res[idx]=[];
-          res[idx].push(num);
-        });
-        return res;
-      }, [])
-      .flat();
-
+      .map(thread => `{"code":[${thread.slice(1,-1)}]}`)
+    }]}`;
     
-    const toSend = '';
+    console.log(wsCode);
+    console.log(toSend);
+
+    try {
+      console.log(JSON.parse(toSend));
+    } catch (error) {
+      console.log('invalid json');
+    } 
 
     // log duties
     const start = new Date()
@@ -74,13 +71,14 @@ function App() {
     if (tsStart) setLogs(prev => [...prev, `[${start.toLocaleString()}] Program start`]);
 
 
-    // sending code to backend
-    fetch("http://localhost:5000/api",  {
+    // sending code to backend - NO USE
+    fetch("http://localhost:5555/api",  {
       method: 'POST',
       headers: {
-        'Content-Type': 'text/plain',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
       },
-      body: JSON.stringify(wsCode)
+      body: JSON.stringify(toSend)
     })
     .then(response => {
       if (!response.ok) {
@@ -89,8 +87,7 @@ function App() {
       return response.json();
     })
     .then(output => {
-      
-      setLogs(prev => [...prev, output.text]);
+      output.text.forEach((str, i) => setLogs(prev => [...prev, str]));
 
       // log duties
       const end = new Date();
@@ -105,7 +102,7 @@ function App() {
       if (tsEnd) setLogs(prev => [...prev, `[${end.toLocaleString()}] Program end`]);
       if (rt) setLogs(prev => [...prev, `Executed in ${end-start}ms`]);
     })
-  }
+  }*/
 
 
   return (
@@ -113,34 +110,8 @@ function App() {
       <div id="core" ref={coreRef}></div>
       <div id="orbit">
 
-        <button id="runBtn" onClick={() => {
-          runCode(javascriptGenerator.workspaceToCode(workspaceRef.current));
-        }}>RUN</button>
-
-
-        <div id="console">
-
-          <div style={{position:"sticky",top:0,background:"white",border:"1px solid"}}>
-             Log
-
-
-            <Popup trigger= {<button id="logCfgBtn">settings</button>} position="left top">
-              <div id="logCfg">
-                <button onClick={() => {setLogs([])}}>Clear Console</button> <br />
-                <button onClick={() => {setAutoClear(prev=>!prev)}}>{autoClear? "✓": "✗"} Clear console before run</button>
-                <button onClick={() => {setRt(prev=>!prev)}}>{rt? "✓": "✗"} Total run time</button> <br />
-                <button onClick={() => {setTsStart(prev=>!prev)}}>{tsStart? "✓": "✗"} Timestamp at program start</button> <br />
-                <button onClick={() => {setTsEnd(prev=>!prev)}}>{tsEnd? "✓": "✗"} Timestamp at program end</button> <br />
-              </div>
-            </Popup>
-          </div>
-          {
-            logs.map((log, i) => (
-              <div key={i}>{log}</div>
-            ))
-          }
-          <div ref={consoleFloor}></div>
-        </div>
+        <div id="circuit"></div>
+        <div id="graph"></div>
 
       </div>
     </>

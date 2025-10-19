@@ -1,53 +1,39 @@
 #root {
   background-color: #000000;
-  height: 90vh;
+  height: 95vh;
   display: grid;
   place-items: stretch / stretch;
   place-content: stretch / stretch;
   grid-template-rows: 100%;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 62% 38%;
   grid-template-areas: 
-    "A B";
+    "A B"
+    "A C";
 }
 
 #core {
   grid-area: A;
 }
 
-#orbit {
+#circuit {
   grid-area: B;
+  height: 47.5vh;
   background-color: white;
   border-width: 1px;
   border-color: black;
 }
 
-#runBtn {
-  background-color: #06ca5e;
-  padding: 7px;
+#graph {
+  grid-area: C;
+  height: 47.5vh;
+  background-color: white;
+  border-width: 1px;
+  border-color: black;
 }
 
 header {
+  height: 5vh;
   padding: 10px;
   text-align: center;
-  background-color: white;
-}
-
-#console {
-  border-width: 1px;
-  border-color: black;
-  font-size: 11px;
-  height: 50vh;
-  overflow: auto;
-}
-
-#logCfgBtn {
-  float: right;
-}
-
-#logCfg {
-  font-size: 11px;
-  width: 150px;
-  border: 1px solid black;
-  z-index: 11; 
   background-color: white;
 }
