@@ -9,11 +9,13 @@ export const hadamardBlock = {
 					"name": "X",
 				}
 			],
+			"previousStatement": null,
+			"nextStatement": null,
 			"tooltip": "applies the hadamard gate to the qubit"
 		});
 	}
 }
 
 export const hadamardGenerator = function (block, generator) {
-  return `h ${generator.getFieldValue('X')}`;
+  return `h ${block.getFieldValue('X')};`;
 }

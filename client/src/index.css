@@ -1,1 +1,58 @@
 @import "tailwindcss";
+
+.quantum-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.visualizer-wrapper {
+  width: 600px; /* Fixed width for non-responsive layout */
+  height: 200px; /* Fixed height for 2-qubit circuit */
+  background-color: #f3f4f6;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circuit-row {
+  display: flex;
+  align-items: center;
+  height: 50px; /* Fixed height per qubit row */
+}
+
+.qubit-label {
+  text-align: center;
+  font-size: 14px;
+}
+
+.gate-row {
+  display: flex;
+  align-items: center;
+}
+
+.gate-cell {
+  display: flex;
+  align-items: center;
+}
+
+.quantum-gate {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.quantum-wire {
+  border-top: 2px solid #000; /* Black wire line */
+  height: 2px;
+  width: 10px;
+}
+
+.visualizer-wrapper > div > div:first-child {
+  display: none;
+}

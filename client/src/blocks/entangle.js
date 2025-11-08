@@ -13,11 +13,13 @@ export const entangleBlock = {
 					"name": "Y"
 				}
 			],
+			"previousStatement": null,
+			"nextStatement": null,
 			"tooltip": "applies quantum entanglement to the two qubits"
 		});
 	}
 }
 
 export const entangleGenerator = function (block, generator) {
-  return `e ${generator.getFieldValue('X')},${generator.getFieldValue('Y')}`;
+  return `e ${block.getFieldValue('X')},${block.getFieldValue('Y')};`;
 }

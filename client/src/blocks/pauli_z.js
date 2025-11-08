@@ -9,11 +9,13 @@ export const pauli_zBlock = {
 					"name": "X"
 				}
 			],
+			"previousStatement": null,
+			"nextStatement": null,
 			"tooltip": "applies the Pauli-Z gate to the qubit"
 		});
 	}
 }
 
 export const pauli_zGenerator = function (block, generator) {
-  return `e ${generator.getFieldValue('X')}`;
+  return `z ${block.getFieldValue('X')};`;
 }

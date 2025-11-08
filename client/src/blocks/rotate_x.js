@@ -13,11 +13,13 @@ export const rotate_xBlock = {
 					"name": "Y"
 				}
 			],
+			"previousStatement": null,
+			"nextStatement": null,
 			"tooltip": "applies the Rotation-X gate to the qubit"
 		});
 	}
 }
 
 export const rotate_xGenerator = function (block, generator) {
-  return `e ${generator.getFieldValue('X')},${generator.getFieldValue('Y')}`;
+  return `a ${block.getFieldValue('X')},${block.getFieldValue('Y')};`;
 }

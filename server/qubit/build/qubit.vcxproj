@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CE2E2992-9671-3041-8A60-D7598829369B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <VcpkgEnabled>false</VcpkgEnabled>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>qubit</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="do_not_import_user.props" Condition="exists('do_not_import_user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Programming\qubit\server\qubit\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">qubit.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">qubit</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Programming\qubit\server\qubit\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">qubit.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">qubit</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Programming\qubit\server\qubit\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">qubit.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">qubit</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Programming\qubit\server\qubit\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">qubit.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">qubit</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Programming\qubit\server\qubit;D:\Programming\qubit\server\qubit\models;D:\Programming\qubit\server\qubit\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/DELL/Documents/Github/vcpkg/installed/x64-windows/include" -std=c++20</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4251;4275</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Programming\qubit\server\qubit;D:\Programming\qubit\server\qubit\models;D:\Programming\qubit\server\qubit\src;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Programming\qubit\server\qubit;D:\Programming\qubit\server\qubit\models;D:\Programming\qubit\server\qubit\src;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/Users/DELL/Documents/Github/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/Programming/qubit/server/qubit/build/Debug/qubit.exe -installedDir C:/Users/DELL/Documents/Github/vcpkg/installed/x64-windows/debug/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\debug\lib\drogon.lib;rpcrt4.lib;crypt32.lib;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\debug\lib\trantor.lib;advapi32.lib;ws2_32.lib;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\debug\lib\jsoncpp.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Programming/qubit/server/qubit/build/Debug/qubit.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Programming/qubit/server/qubit/build/Debug/qubit.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Programming\qubit\server\qubit;D:\Programming\qubit\server\qubit\models;D:\Programming\qubit\server\qubit\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/DELL/Documents/Github/vcpkg/installed/x64-windows/include" -std=c++20</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DisableSpecificWarnings>4251;4275</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Programming\qubit\server\qubit;D:\Programming\qubit\server\qubit\models;D:\Programming\qubit\server\qubit\src;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Programming\qubit\server\qubit;D:\Programming\qubit\server\qubit\models;D:\Programming\qubit\server\qubit\src;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/Users/DELL/Documents/Github/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/Programming/qubit/server/qubit/build/Release/qubit.exe -installedDir C:/Users/DELL/Documents/Github/vcpkg/installed/x64-windows/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\lib\drogon.lib;rpcrt4.lib;crypt32.lib;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\lib\trantor.lib;advapi32.lib;ws2_32.lib;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\debug\lib\jsoncpp.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Programming/qubit/server/qubit/build/Release/qubit.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Programming/qubit/server/qubit/build/Release/qubit.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Programming\qubit\server\qubit;D:\Programming\qubit\server\qubit\models;D:\Programming\qubit\server\qubit\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/DELL/Documents/Github/vcpkg/installed/x64-windows/include" -std=c++20</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DisableSpecificWarnings>4251;4275</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Programming\qubit\server\qubit;D:\Programming\qubit\server\qubit\models;D:\Programming\qubit\server\qubit\src;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Programming\qubit\server\qubit;D:\Programming\qubit\server\qubit\models;D:\Programming\qubit\server\qubit\src;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/Users/DELL/Documents/Github/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/Programming/qubit/server/qubit/build/MinSizeRel/qubit.exe -installedDir C:/Users/DELL/Documents/Github/vcpkg/installed/x64-windows/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\lib\drogon.lib;rpcrt4.lib;crypt32.lib;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\lib\trantor.lib;advapi32.lib;ws2_32.lib;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\debug\lib\jsoncpp.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Programming/qubit/server/qubit/build/MinSizeRel/qubit.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Programming/qubit/server/qubit/build/MinSizeRel/qubit.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Programming\qubit\server\qubit;D:\Programming\qubit\server\qubit\models;D:\Programming\qubit\server\qubit\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/DELL/Documents/Github/vcpkg/installed/x64-windows/include" -std=c++20</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4251;4275</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Programming\qubit\server\qubit;D:\Programming\qubit\server\qubit\models;D:\Programming\qubit\server\qubit\src;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Programming\qubit\server\qubit;D:\Programming\qubit\server\qubit\models;D:\Programming\qubit\server\qubit\src;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/Users/DELL/Documents/Github/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/Programming/qubit/server/qubit/build/RelWithDebInfo/qubit.exe -installedDir C:/Users/DELL/Documents/Github/vcpkg/installed/x64-windows/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\lib\drogon.lib;rpcrt4.lib;crypt32.lib;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\lib\trantor.lib;advapi32.lib;ws2_32.lib;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\debug\lib\jsoncpp.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Programming/qubit/server/qubit/build/RelWithDebInfo/qubit.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Programming/qubit/server/qubit/build/RelWithDebInfo/qubit.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Programming\qubit\server\qubit\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Programming/qubit/server/qubit/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Programming/qubit/server/qubit -BD:/Programming/qubit/server/qubit/build --check-stamp-file D:/Programming/qubit/server/qubit/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeFindDependencyMacro.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakePushCheckState.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CheckCXXSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindOpenSSL.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindPostgreSQL.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Internal\CheckSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\SelectLibraryConfigurations.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\c-ares\c-ares-config-version.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\c-ares\c-ares-config.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\c-ares\c-ares-targets-debug.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\c-ares\c-ares-targets-release.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\c-ares\c-ares-targets.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonConfig.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonConfigVersion.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonTargets-debug.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonTargets-release.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonTargets.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonUtilities.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\FindBrotli.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\FindFilesystem.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\FindJsoncpp.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\FindSQLite3.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\ParseAndAddDrogonTests.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\openssl\vcpkg-cmake-wrapper.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\postgresql\vcpkg-cmake-wrapper.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\trantor\TrantorConfig.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\trantor\TrantorConfigVersion.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\trantor\TrantorTargets-debug.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\trantor\TrantorTargets-release.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\trantor\TrantorTargets.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\zlib\vcpkg-cmake-wrapper.cmake;C:\Users\DELL\Documents\Github\vcpkg\scripts\buildsystems\vcpkg.cmake;D:\Programming\qubit\server\qubit\build\CMakeFiles\3.27.4\CMakeCXXCompiler.cmake;D:\Programming\qubit\server\qubit\build\CMakeFiles\3.27.4\CMakeRCCompiler.cmake;D:\Programming\qubit\server\qubit\build\CMakeFiles\3.27.4\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Programming\qubit\server\qubit\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Programming/qubit/server/qubit/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Programming/qubit/server/qubit -BD:/Programming/qubit/server/qubit/build --check-stamp-file D:/Programming/qubit/server/qubit/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeFindDependencyMacro.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakePushCheckState.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CheckCXXSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindOpenSSL.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindPostgreSQL.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Internal\CheckSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\SelectLibraryConfigurations.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\c-ares\c-ares-config-version.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\c-ares\c-ares-config.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\c-ares\c-ares-targets-debug.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\c-ares\c-ares-targets-release.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\c-ares\c-ares-targets.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonConfig.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonConfigVersion.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonTargets-debug.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonTargets-release.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonTargets.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonUtilities.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\FindBrotli.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\FindFilesystem.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\FindJsoncpp.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\FindSQLite3.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\ParseAndAddDrogonTests.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\openssl\vcpkg-cmake-wrapper.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\postgresql\vcpkg-cmake-wrapper.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\trantor\TrantorConfig.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\trantor\TrantorConfigVersion.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\trantor\TrantorTargets-debug.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\trantor\TrantorTargets-release.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\trantor\TrantorTargets.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\zlib\vcpkg-cmake-wrapper.cmake;C:\Users\DELL\Documents\Github\vcpkg\scripts\buildsystems\vcpkg.cmake;D:\Programming\qubit\server\qubit\build\CMakeFiles\3.27.4\CMakeCXXCompiler.cmake;D:\Programming\qubit\server\qubit\build\CMakeFiles\3.27.4\CMakeRCCompiler.cmake;D:\Programming\qubit\server\qubit\build\CMakeFiles\3.27.4\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Programming\qubit\server\qubit\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Programming/qubit/server/qubit/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Programming/qubit/server/qubit -BD:/Programming/qubit/server/qubit/build --check-stamp-file D:/Programming/qubit/server/qubit/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeFindDependencyMacro.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakePushCheckState.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CheckCXXSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindOpenSSL.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindPostgreSQL.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Internal\CheckSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\SelectLibraryConfigurations.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\c-ares\c-ares-config-version.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\c-ares\c-ares-config.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\c-ares\c-ares-targets-debug.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\c-ares\c-ares-targets-release.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\c-ares\c-ares-targets.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonConfig.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonConfigVersion.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonTargets-debug.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonTargets-release.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonTargets.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonUtilities.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\FindBrotli.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\FindFilesystem.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\FindJsoncpp.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\FindSQLite3.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\ParseAndAddDrogonTests.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\openssl\vcpkg-cmake-wrapper.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\postgresql\vcpkg-cmake-wrapper.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\trantor\TrantorConfig.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\trantor\TrantorConfigVersion.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\trantor\TrantorTargets-debug.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\trantor\TrantorTargets-release.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\trantor\TrantorTargets.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\zlib\vcpkg-cmake-wrapper.cmake;C:\Users\DELL\Documents\Github\vcpkg\scripts\buildsystems\vcpkg.cmake;D:\Programming\qubit\server\qubit\build\CMakeFiles\3.27.4\CMakeCXXCompiler.cmake;D:\Programming\qubit\server\qubit\build\CMakeFiles\3.27.4\CMakeRCCompiler.cmake;D:\Programming\qubit\server\qubit\build\CMakeFiles\3.27.4\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Programming\qubit\server\qubit\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Programming/qubit/server/qubit/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Programming/qubit/server/qubit -BD:/Programming/qubit/server/qubit/build --check-stamp-file D:/Programming/qubit/server/qubit/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeFindDependencyMacro.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakePushCheckState.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CheckCXXSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindOpenSSL.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindPostgreSQL.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Internal\CheckSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\SelectLibraryConfigurations.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\c-ares\c-ares-config-version.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\c-ares\c-ares-config.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\c-ares\c-ares-targets-debug.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\c-ares\c-ares-targets-release.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\c-ares\c-ares-targets.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonConfig.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonConfigVersion.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonTargets-debug.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonTargets-release.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonTargets.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\DrogonUtilities.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\FindBrotli.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\FindFilesystem.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\FindJsoncpp.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\FindSQLite3.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\drogon\ParseAndAddDrogonTests.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\openssl\vcpkg-cmake-wrapper.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\postgresql\vcpkg-cmake-wrapper.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\trantor\TrantorConfig.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\trantor\TrantorConfigVersion.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\trantor\TrantorTargets-debug.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\trantor\TrantorTargets-release.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\trantor\TrantorTargets.cmake;C:\Users\DELL\Documents\Github\vcpkg\installed\x64-windows\share\zlib\vcpkg-cmake-wrapper.cmake;C:\Users\DELL\Documents\Github\vcpkg\scripts\buildsystems\vcpkg.cmake;D:\Programming\qubit\server\qubit\build\CMakeFiles\3.27.4\CMakeCXXCompiler.cmake;D:\Programming\qubit\server\qubit\build\CMakeFiles\3.27.4\CMakeRCCompiler.cmake;D:\Programming\qubit\server\qubit\build\CMakeFiles\3.27.4\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Programming\qubit\server\qubit\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\Programming\qubit\server\qubit\main.cc" />
+    <ClCompile Include="D:\Programming\qubit\server\qubit\controllers\Api.cc" />
+    <ClCompile Include="D:\Programming\qubit\server\qubit\filters\Cors.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Programming\qubit\server\qubit\build\ZERO_CHECK.vcxproj">
+      <Project>{FD4347DC-91E7-3B57-9C8E-A34507ACD243}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

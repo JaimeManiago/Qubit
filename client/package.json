@@ -10,13 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.11",
+    "@tailwindcss/vite": "^4.1.16",
     "blockly": "^12.2.0",
+    "chart.js": "^4.5.1",
     "js-interpreter": "^6.0.1",
+    "quantum-circuit": "^0.9.242",
     "react": "^18.3.1",
     "react-blockly": "^9.0.0",
+    "react-chartjs-2": "^5.3.0",
     "react-dom": "^18.3.1",
-    "reactjs-popup": "^2.0.6"
+    "reactjs-popup": "^2.0.6",
+    "reactqbit": "^0.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
@@ -29,7 +33,7 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
     "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.11",
+    "tailwindcss": "^4.1.16",
     "vite": "^7.1.0"
   }
 }
