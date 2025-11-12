@@ -9,11 +9,13 @@ export const resetBlock = {
 					"name": "X"
 				}
 			],
+			"previousStatement": null,
+			"nextStatement": null,
 			"tooltip": "sets the qubit's state to |0>"
 		});
 	}
 }
 
 export const resetGenerator = function (block, generator) {
-  return `e ${generator.getFieldValue('X')}`;
+  return `r ${block.getFieldValue('X')};`;
 }

@@ -13,11 +13,13 @@ export const rotate_zBlock = {
 					"name": "Y"
 				}
 			],
+			"previousStatement": null,
+			"nextStatement": null,
 			"tooltip": "applies the Rotation-Z gate to the qubit"
 		});
 	}
 }
 
 export const rotate_zGenerator = function (block, generator) {
-  return `e ${generator.getFieldValue('X')},${generator.getFieldValue('Y')}`;
+  return `c ${block.getFieldValue('X')},${block.getFieldValue('Y')};`;
 }

@@ -9,11 +9,12 @@ export const set_qubitBlock = {
 					"name": "X"
 				}
 			],
+			"nextStatement": null,
 			"tooltip": "initiates qubits"
 		});
 	}
 }
 
 export const set_qubitGenerator = function (block, generator) {
-  return `e ${generator.getFieldValue('X')}`;
+  return `q ${block.getFieldValue('X')};`;
 }

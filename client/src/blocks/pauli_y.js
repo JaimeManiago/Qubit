@@ -9,11 +9,13 @@ export const pauli_yBlock = {
 					"name": "X"
 				}
 			],
+			"previousStatement": null,
+			"nextStatement": null,
 			"tooltip": "applies the Pauli-Y gate to the qubit"
 		});
 	}
 }
 
 export const pauli_yGenerator = function (block, generator) {
-  return `e ${generator.getFieldValue('X')}`;
+  return `y ${block.getFieldValue('X')};`;
 }
