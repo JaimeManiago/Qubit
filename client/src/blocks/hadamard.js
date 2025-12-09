@@ -17,5 +17,9 @@ export const hadamardBlock = {
 }
 
 export const hadamardGenerator = function (block, generator) {
-  return `h ${block.getFieldValue('X')};`;
+  return JSON.stringify({
+    type: 'H',
+    wires: [parseInt(block.getFieldValue('X'))],
+    params: {}
+  }) + ',';
 }

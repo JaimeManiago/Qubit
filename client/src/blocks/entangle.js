@@ -21,5 +21,13 @@ export const entangleBlock = {
 }
 
 export const entangleGenerator = function (block, generator) {
-  return `e ${block.getFieldValue('X')},${block.getFieldValue('Y')};`;
+  return JSON.stringify({
+    type: 'H',
+    wires: [parseInt(block.getFieldValue('X'))],
+    params: {}
+  }) + ',' + JSON.stringify({
+    type: 'CX',
+    wires: [parseInt(block.getFieldValue('X')), parseInt(block.getFieldValue('Y'))],
+    params: {}
+  }) + ',';
 }

@@ -21,5 +21,9 @@ export const rotate_xBlock = {
 }
 
 export const rotate_xGenerator = function (block, generator) {
-  return `a ${block.getFieldValue('X')},${block.getFieldValue('Y')};`;
+  return JSON.stringify({
+    type: 'RX',
+    wires: [parseInt(block.getFieldValue('X'))],
+    params: {theta: block.getFieldValue('Y')}
+  }) + ',';
 }

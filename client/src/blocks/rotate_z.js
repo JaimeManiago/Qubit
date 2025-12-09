@@ -21,5 +21,9 @@ export const rotate_zBlock = {
 }
 
 export const rotate_zGenerator = function (block, generator) {
-  return `c ${block.getFieldValue('X')},${block.getFieldValue('Y')};`;
+  return JSON.stringify({
+    type: 'RZ',
+    wires: [parseInt(block.getFieldValue('X'))],
+    params: {phi: block.getFieldValue('Y')}
+  }) + ',';
 }

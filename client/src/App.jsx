@@ -9,125 +9,27 @@ import Chart from "chart.js/auto";
 import { CategoryScale } from "chart.js";
 import Histogram from "./components/Histogram";
 import Circuit from "./components/Circuit"
+import QuantumCircuit from 'quantum-circuit'
+import InfoPanel from './components/InfoPanel'
 
 registerBlocks();
-Chart.register(CategoryScale)
-
-const Data = [
-  {
-    id: 1,
-    year: "|00⟩",
-    userGain: 50
-  },
-  {
-    id: 2,
-    year: "|01⟩",
-    userGain: 0
-  },
-  {
-    id: 3,
-    year: "|10⟩",
-    userGain: 0
-  },
-  {
-    id: 4,
-    year: "|11⟩",
-    userGain: 50
-  }
-];
+Chart.register(CategoryScale);
 
 function App() {
 
-  /* CIRCUIT SETUP */
+  /* DYNAMIC DATA SETUP */
+  // Quantum circuit visualization
   const [ qc, setQc ] = useState({
-    qubits: 0,
-    gates: []
+    qubits:0,
+    gates:[]
   });
-
-
-  /* CODE GENERATION */
-  
-
-
-  /* BLOCKLY INJECTION */
-  const coreRef = useRef(null);
-  const workspaceRef = useRef(null);
-
-
-  useEffect(() => {
-    workspaceRef.current = Blockly.inject(coreRef.current, workspaceJSON);
-
-    const handleResize = () => Blockly.svgResize(workspaceRef.current);
-    window.addEventListener("resize", handleResize);
-
-
-    /*
-    workspaceRef.current.addChangeListener(function (event) {
-      if (event.type == Blockly.Events.BLOCK_CREATE) {
-        if (workspaceRef.current
-              .getAllBlocks(false)
-              .filter(b=>b.type === 'set_qubit')
-              .length > 1) {
-          const blk = workspaceRef.current.getBlockById(event.blockId);
-          if (blk.type === 'set_qubit') {
-            blk.dispose(true);
-            alert("Only one qubit initializer block is allowed");
-            return;
-          }
-        }
-        
-      }
-      if (event.type == Blockly.Events.BLOCK_CHANGE  || event.type == Blockly.Events.BLOCK_MOVE) {
-        const code = javascriptGenerator
-                      .workspaceToCode(workspaceRef.current)
-                      .split('\n')
-                      .filter(line => line.startsWith('q'))[0]
-                      .split(';')
-                      .map(line => line.split(' '))
-                      .slice(0,-1);
-        console.log(code);
-
-        setQc({qubits:0,gates:[]});
-        
-        code.forEach((line, idx) => {
-          if (line[0] == 'q') {
-            setQc(prev => ({...prev, qubits: parseInt(line[1])}))
-          }
-          else if (line[0] == 'h') {
-            setQc(prev => ({
-              ...prev,
-              gates: [...prev.gates, { type: 'H', targets: ['q'+line[1]], position: 0 }]
-            }));
-          }
-        });
-
-        /*setQc(prev => ({
-          ...prev,
-          gates: [...prev.gates, { type: 'H', targets: ['q0'], position: 0 }]
-        }));
-      }
-    }
-
-
-
-
-  );*/
-    
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      workspaceRef.current?.dispose();
-    };
-  }, []);
-
-
-  /* CHART SETUP */
+  // Chart data
   const [chartData, setChartData] = useState({
-    labels: Data.map((data) => data.year), 
+    labels: [], 
     datasets: [
       {
         label: "Probability ",
-        data: Data.map((data) => data.userGain),
+        data: [],
         backgroundColor: [
           "#70c6dbff"
         ],
@@ -136,104 +38,125 @@ function App() {
       }
     ]
   });
+  // Information panel
+  const [ selectedGate, setSelectedGate ] = useState(null);
+  const [ amplitudes, setAmplitudes ] = useState([]);
 
 
-  /* RUN LOG 
-  const [ logs, setLogs ] = useState([]);
-  const consoleFloor = useRef(null);
 
-  const [rt, setRt] = useState(true);
-  const [tsStart, setTsStart] = useState(true);
-  const [tsEnd, setTsEnd] = useState(true);
-  const [autoClear, setAutoClear] = useState(false);
+  /* CODE GENERATION */
+  function compile(event) {
+    console.log("\n");
+
+    // check for the right Blockly event
+    if (!(event.type == Blockly.Events.BLOCK_MOVE || event.type == Blockly.Events.BLOCK_CHANGE)) return;
+
+    const codeStr = javascriptGenerator.workspaceToCode(workspaceRef.current);
+    if (codeStr.length==0) {
+      setSelectedGate(null);
+      setAmplitudes([]);
+      setQc({qubits:0,gates:[]});
+      setChartData(prevData => ({
+        ...prevData,
+        labels: [],
+        datasets: prevData.datasets.map(dataset => ({
+          ...dataset,
+          data: []
+        }))
+      }))
+      return;
+    }
+
+    // Manipulate code string
+    const [ q, code ] = codeStr.split('\n').filter(str => str.includes(';'))[0].split(';');
+    var gates = JSON.parse(`[${code.slice(0,-1)}]`);
+    
+    console.log(gates);
+
+    // Set gate columns
+    for (let i=0; i<gates.length; i++) {
+      gates[i].column = i;
+    }
+
+    // Set quantum circuit visualizer args
+    setQc({qubits: q, gates:gates});
+
+    /* RUNNING QUANTUM CIRCUIT */
+    var circuit = new QuantumCircuit(q);
+    for (const {type, wires, params: {theta="0", phi="0", lambda="0"}} of gates) {
+      circuit.appendGate(
+        type.toLowerCase(),
+        wires,
+        {
+          "params": {
+            "theta": theta+"pi",
+            "phi": phi+"pi",
+            "lambda": lambda+"pi",
+          }
+        }
+      );
+    }
+
+    circuit.run();
+    var s = circuit.stateAsString(false).split(/[\n\t|> %]/).filter(Boolean);
+    const states = [];
+    const probs = [];
+    setAmplitudes([])
+
+    for (let i=0; i<s.length; i+=3) {
+      setAmplitudes((prev) => [...prev, s[i]]);
+      states.push(`|${s[i+1]}⟩`);
+      probs.push(s[i+2]);
+    }
+
+    setChartData(prevData => ({
+      ...prevData,
+      labels: states,
+      datasets: prevData.datasets.map(dataset => ({
+        ...dataset,
+        data: probs
+      }))
+    }));
+
+    console.log(s);
+  }
+
+  const gateClick = (gate) => {
+    setSelectedGate(gate);
+  }
+
+  /* BLOCKLY INJECTION */
+  const coreRef = useRef(null);
+  const workspaceRef = useRef(null);
 
   useEffect(() => {
-    consoleFloor.current?.scrollIntoView({behavior:"smooth"});
-  }, [logs])*/
+    workspaceRef.current = Blockly.inject(coreRef.current, workspaceJSON);
 
+    const handleResize = () => Blockly.svgResize(workspaceRef.current);
+    window.addEventListener("resize", handleResize);
 
-
-  /* RUN BUTON CODE */
-  /*function runCode(wsCode) {
-
-    // process data
-    const toSend = `{"threads": [${wsCode
-      .split('\n')
-      .filter((code) => {
-        return( code.startsWith("S") && code.length>1);
-      })
-      .map(thread => `{"code":[${thread.slice(1,-1)}]}`)
-    }]}`;
+    workspaceRef.current.addChangeListener(compile);
     
-    console.log(wsCode);
-    console.log(toSend);
-
-    try {
-      console.log(JSON.parse(toSend));
-    } catch (error) {
-      console.log('invalid json');
-    } 
-
-    // log duties
-    const start = new Date()
-    if (autoClear) setLogs([]);
-    else setLogs(prev => [...prev, `-`]);
-    if (tsStart) setLogs(prev => [...prev, `[${start.toLocaleString()}] Program start`]);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      workspaceRef.current?.dispose();
+    };
+  }, []);
 
 
-    // sending code to backend - NO USE
-    fetch("http://localhost:5555/api",  {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-      },
-      body: JSON.stringify(toSend)
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network Error');
-      }
-      return response.json();
-    })
-    .then(output => {
-      output.text.forEach((str, i) => setLogs(prev => [...prev, str]));
-
-      // log duties
-      const end = new Date();
-      if (tsEnd) setLogs(prev => [...prev, `[${end.toLocaleString()}] Program end`]);
-      if (rt) setLogs(prev => [...prev, `Executed in ${end-start}ms`]);
-    })
-    .catch(error => {
-      console.error('Error: ',error);
-
-      // log duties
-      const end = new Date();
-      if (tsEnd) setLogs(prev => [...prev, `[${end.toLocaleString()}] Program end`]);
-      if (rt) setLogs(prev => [...prev, `Executed in ${end-start}ms`]);
-    })
-  }*/
 
   return (
     <>
-      <div id="core" ref={coreRef}></div>
-      <div id="orbit">
-
-        <Circuit 
-        numQubits={10} // Test vertical scroll with many qubits
-        gates={[
-          { type: 'H', qubits: [0], column: 0 },
-          { type: 'RX', qubits: [1], column: 1, params: [Math.PI / 2] }, // RX(π/2)
-          { type: 'CNOT', qubits: [0, 1], column: 2 },
-          { type: 'CRX', qubits: [0, 2], column: 3, params: [Math.PI] }, // CRX(π) as example
-          { type: 'RX', qubits: [2], column: 0, params: [1.57] }
-        ]} 
+      <div id="code" ref={coreRef}></div>
+      <Circuit 
+        numQubits={qc.qubits} // Test vertical scroll with many qubits
+        gates={qc.gates} 
         containerWidth={800} // Override defaults
         containerHeight={300}
+        onDataSubmit = {gateClick}
       />
-        <Histogram chartData={chartData} />
-
-      </div>
+      <InfoPanel gate={selectedGate} stateVector={amplitudes}/>
+      <Histogram chartData={chartData} />
     </>
   );
 }

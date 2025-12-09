@@ -21,5 +21,9 @@ export const rotate_yBlock = {
 }
 
 export const rotate_yGenerator = function (block, generator) {
-  return `b ${block.getFieldValue('X')},${block.getFieldValue('Y')};`;
+  return JSON.stringify({
+    type: 'RY',
+    wires: [parseInt(block.getFieldValue('X'))],
+    params: {theta: block.getFieldValue('Y')}
+  }) + ',';
 }

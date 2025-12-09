@@ -16,5 +16,5 @@ export const set_qubitBlock = {
 }
 
 export const set_qubitGenerator = function (block, generator) {
-  return `q ${block.getFieldValue('X')};`;
+  return `${block.getFieldValue('X')};`;
 }

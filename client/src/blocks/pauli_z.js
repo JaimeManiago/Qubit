@@ -17,5 +17,9 @@ export const pauli_zBlock = {
 }
 
 export const pauli_zGenerator = function (block, generator) {
-  return `z ${block.getFieldValue('X')};`;
+  return JSON.stringify({
+    type: 'Z',
+    wires: [parseInt(block.getFieldValue('X'))],
+    params: {}
+  }) + ',';
 }
